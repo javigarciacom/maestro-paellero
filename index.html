@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro Paellero</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1>Maestro Paellero</h1>
+            <div id="timers">
+                <div id="real-time-timer">Tiempo Real: 03:00</div>
+                <div id="simulated-time-timer">Tiempo Cocción: 00:00 / 60:00</div>
+            </div>
+        </header>
+
+        <main id="game-area">
+            <div id="paella-pan-container">
+                <div id="paella-pan">
+                    <div id="paella-lid" class="hidden"></div>
+                    <div id="pan-ingredients-visual"></div>
+                </div>
+                <div id="fire-visual-container">
+                    <div id="fire-level-display">Fuego: 5</div>
+                    <div id="fire-animation">
+                        <div class="flame"></div>
+                        <div class="flame"></div>
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="ingredients-panel">
+                <h2>Ingredientes</h2>
+                <div id="ingredients-list">
+                    <!-- Ingredients will be populated by JS -->
+                </div>
+            </aside>
+        </main>
+        
+        <footer id="controls-panel">
+            <h2>Controles</h2>
+            <div class="control-group">
+                <label for="fire-slider">Fuego:</label>
+                <input type="range" id="fire-slider" min="0" max="10" value="5" aria-label="Control de Fuego">
+                <span id="fire-value-display">5</span>
+            </div>
+            <button id="stir-button" aria-label="Mover ingredientes">Mover Ingredientes</button>
+            <button id="cover-button" aria-label="Tapar paella">Tapar Paella</button>
+            <button id="serve-button" aria-label="Servir paella">Servir Paella</button>
+        </footer>
+
+        <div id="start-modal" class="modal visible">
+            <div class="modal-content">
+                <h2>¡Bienvenido a Maestro Paellero!</h2>
+                <p>Demuestra tus habilidades cocinando la paella perfecta en 3 minutos (1 hora de tiempo simulado).</p>
+                <p>Añade los ingredientes, controla el fuego y sirve cuando esté lista. ¡Suerte!</p>
+                <button id="start-game-button">¡A Cocinar!</button>
+            </div>
+        </div>
+
+        <div id="end-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="end-title">¡Paella Servida!</h2>
+                <p id="score-display">Puntuación: 0/100</p>
+                <p id="feedback-message">Valoración del chef...</p>
+                <button id="play-again-button">Jugar de Nuevo</button>
+            </div>
+        </div>
+
+    </div>
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
